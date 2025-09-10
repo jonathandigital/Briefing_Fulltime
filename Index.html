@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📋 Briefing - Fulltimee</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .checkbox-custom {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #d1d5db;
+            border-radius: 4px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .checkbox-custom:checked {
+            background-color: #667eea;
+            border-color: #667eea;
+        }
+        .checkbox-custom:checked::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .radio-custom {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #d1d5db;
+            border-radius: 50%;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .radio-custom:checked {
+            border-color: #667eea;
+        }
+        .radio-custom:checked::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            background-color: #667eea;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="max-w-2xl mx-auto p-4 sm:p-6">
+        <!-- Header -->
+        <div class="gradient-bg rounded-2xl p-6 sm:p-8 text-white text-center mb-8 shadow-xl">
+            <h1 class="text-2xl sm:text-3xl font-bold mb-2">📋 Briefing - Fulltimee</h1>
+            <p class="text-lg opacity-90">Vamos conhecer melhor suas necessidades!</p>
+        </div>
+
+        <form id="briefingForm" class="space-y-8">
+            <!-- Pergunta 1 -->
+            <div class="bg-white rounded-xl p-6 shadow-lg">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">1. Quais tipos de serviços você deseja contratar?</h2>
+                <p class="text-gray-600 mb-4 text-sm">(Selecione um ou mais)</p>
+                <div class="space-y-3">
+                    <label class="flex items-center space-x-3 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                        <input type="checkbox" name="servicos" value="Tráfego pago" class="checkbox-custom">
+                        <span class="text-gray-700">🎯 Tráfego pago</span>
+                    </label>
+                    <label class="flex items-center space-x-3 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                        <input type="checkbox" name="servicos" value="Start no perfil (posicionamento inicial e otimização)" class="checkbox-custom">
+                        <span class="text-gray-700">🚀 Start no perfil (posicionamento inicial e otimização)</span>
+                    </label>
+                    <label class="flex items-center space-x-3 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                        <input type="checkbox" name="servicos" value="Fotos profissionais" class="checkbox-custom">
+                        <span class="text-gray-700">📸 Fotos profissionais</span>
+                    </label>
+                    <label class="flex items-center space-x-3 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                        <input type="checkbox" name="servicos" value="Videomaker" class="checkbox-custom">
+                        <span class="text-gray-700">🎬 Videomaker</span>
+                    </label>
+                    <label class="flex items-center space-x-3 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                        <input type="checkbox" name="servicos" value="Cobertura de evento" class="checkbox-custom">
+                        <span class="text-gray-700">🎪 Cobertura de evento</span>
+                    </label>
+                    <label class="flex items-center space-x-3 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                        <input type="checkbox" name="servicos" value="Real-time em evento (conteúdo produzido e postado no mesmo dia)" class="checkbox-custom">
+                        <span class="text-gray-700">⚡ Real-time em evento (conteúdo produzido e postado no mesmo dia)</span>
+                    </label>
+                    <label class="flex items-center space-x-3 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                        <input type="checkbox" name="servicos" value="Gestão de redes sociais" class="checkbox-custom">
+                        <span class="text-gray-700">📱 Gestão de redes sociais</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Pergunta 2 -->
+            <div class="bg-white rounded-xl p-6 shadow-lg">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">2. Qual faixa de investimento você pretende aplicar?</h2>
+                <div class="space-y-3">
+                    <label class="flex items-center space-x-3 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                        <input type="radio" name="investimento" value="Até R$ 500" class="radio-custom">
+                        <span class="text-gray-700">💰 Até R$ 500</span>
+                    </label>
+                    <label class="flex items-center space-x-3 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                        <input type="radio" name="investimento" value="A partir de R$ 1.000" class="radio-custom">
+                        <span class="text-gray-700">💵 A partir de R$ 1.000</span>
+                    </label>
+                    <label class="flex items-center space-x-3 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                        <input type="radio" name="investimento" value="A partir de R$ 3.000" class="radio-custom">
+                        <span class="text-gray-700">💎 A partir de R$ 3.000</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Pergunta 3 -->
+            <div class="bg-white rounded-xl p-6 shadow-lg">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">3. Quais redes sociais você deseja trabalhar?</h2>
+                <p class="text-gray-600 mb-4 text-sm">(Selecione uma ou mais)</p>
+                <div class="space-y-3">
+                    <label class="flex items-center space-x-3 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                        <input type="checkbox" name="redes" value="LinkedIn" class="checkbox-custom">
+                        <span class="text-gray-700">💼 LinkedIn</span>
+                    </label>
+                    <label class="flex items-center space-x-3 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                        <input type="checkbox" name="redes" value="TikTok" class="checkbox-custom">
+                        <span class="text-gray-700">🎵 TikTok</span>
+                    </label>
+                    <label class="flex items-center space-x-3 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                        <input type="checkbox" name="redes" value="YouTube" class="checkbox-custom">
+                        <span class="text-gray-700">📺 YouTube</span>
+                    </label>
+                    <label class="flex items-center space-x-3 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                        <input type="checkbox" name="redes" value="Instagram" class="checkbox-custom">
+                        <span class="text-gray-700">📷 Instagram</span>
+                    </label>
+                    <label class="flex items-center space-x-3 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                        <input type="checkbox" name="redes" value="Facebook" class="checkbox-custom">
+                        <span class="text-gray-700">👥 Facebook</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Pergunta 4 -->
+            <div class="bg-white rounded-xl p-6 shadow-lg">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">4. Qual é o seu principal objetivo com esse investimento?</h2>
+                <div class="space-y-3">
+                    <label class="flex items-center space-x-3 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                        <input type="radio" name="objetivo" value="Aumentar seguidores" class="radio-custom">
+                        <span class="text-gray-700">👥 Aumentar seguidores</span>
+                    </label>
+                    <label class="flex items-center space-x-3 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                        <input type="radio" name="objetivo" value="Gerar autoridade/posicionamento" class="radio-custom">
+                        <span class="text-gray-700">🏆 Gerar autoridade/posicionamento</span>
+                    </label>
+                    <label class="flex items-center space-x-3 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                        <input type="radio" name="objetivo" value="Atrair novos clientes (captação)" class="radio-custom">
+                        <span class="text-gray-700">🎯 Atrair novos clientes (captação)</span>
+                    </label>
+                    <label class="flex items-center space-x-3 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                        <input type="radio" name="objetivo" value="Vender mais online" class="radio-custom">
+                        <span class="text-gray-700">💰 Vender mais online</span>
+                    </label>
+                    <label class="flex items-center space-x-3 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                        <input type="radio" name="objetivo" value="Fortalecer a marca no digital" class="radio-custom">
+                        <span class="text-gray-700">🚀 Fortalecer a marca no digital</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Pergunta 5 -->
+            <div class="bg-white rounded-xl p-6 shadow-lg">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">5. Como você prefere o acompanhamento do projeto?</h2>
+                <div class="space-y-3">
+                    <label class="flex items-center space-x-3 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                        <input type="radio" name="acompanhamento" value="Reuniões semanais de alinhamento" class="radio-custom">
+                        <span class="text-gray-700">📅 Reuniões semanais de alinhamento</span>
+                    </label>
+                    <label class="flex items-center space-x-3 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                        <input type="radio" name="acompanhamento" value="Relatórios quinzenais de performance" class="radio-custom">
+                        <span class="text-gray-700">📊 Relatórios quinzenais de performance</span>
+                    </label>
+                    <label class="flex items-center space-x-3 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                        <input type="radio" name="acompanhamento" value="Reuniões mensais com análise estratégica" class="radio-custom">
+                        <span class="text-gray-700">📈 Reuniões mensais com análise estratégica</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Botão de Envio -->
+            <div class="text-center">
+                <button type="button" onclick="enviarBriefing()" class="gradient-bg text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-lg">
+                    📱 Enviar Briefing via WhatsApp
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function enviarBriefing() {
+            // Coleta os serviços selecionados
+            const servicos = Array.from(document.querySelectorAll('input[name="servicos"]:checked'))
+                .map(input => input.value);
+            
+            // Coleta o investimento selecionado
+            const investimento = document.querySelector('input[name="investimento"]:checked')?.value || '';
+            
+            // Coleta as redes sociais selecionadas
+            const redes = Array.from(document.querySelectorAll('input[name="redes"]:checked'))
+                .map(input => input.value);
+            
+            // Coleta o objetivo selecionado
+            const objetivo = document.querySelector('input[name="objetivo"]:checked')?.value || '';
+            
+            // Coleta o acompanhamento selecionado
+            const acompanhamento = document.querySelector('input[name="acompanhamento"]:checked')?.value || '';
+
+            // Validação básica
+            if (servicos.length === 0 || !investimento || redes.length === 0 || !objetivo || !acompanhamento) {
+                alert('Por favor, preencha todas as perguntas antes de enviar!');
+                return;
+            }
+
+            // Formata a mensagem para WhatsApp
+            let mensagem = `*Novo Briefing - Fulltimee*\n\n`;
+            
+            mensagem += `*Servicos desejados:*\n`;
+            servicos.forEach(servico => {
+                mensagem += `• ${servico}\n`;
+            });
+            
+            mensagem += `\n*Faixa de investimento:*\n${investimento}\n\n`;
+            
+            mensagem += `*Redes sociais:*\n`;
+            redes.forEach(rede => {
+                mensagem += `• ${rede}\n`;
+            });
+            
+            mensagem += `\n*Objetivo principal:*\n${objetivo}\n\n`;
+            
+            mensagem += `*Acompanhamento preferido:*\n${acompanhamento}\n\n`;
+            
+            mensagem += `Obrigado por preencher nosso briefing! Vamos analisar suas necessidades e entrar em contato em breve.`;
+
+            // Codifica a mensagem para URL
+            const mensagemCodificada = encodeURIComponent(mensagem);
+            
+            // Número do WhatsApp
+            const numeroWhatsApp = '5583986019604';
+            
+            // Cria o link do WhatsApp
+            const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`;
+            
+            // Abre o WhatsApp
+            window.open(linkWhatsApp, '_blank');
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97d0d6b2131bf632',t:'MTc1NzUyNzM3MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
